@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liber de essentia spirituum</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Noto+Sans+Symbols+2&family=Noto+Sans+Symbols&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=12">
+</head>
+<body>
+<div id="app">
+  <div id="left">
+    <div id="sky"></div>
+    <canvas id="view" width="720" height="528" tabindex="0"></canvas>
+    <div id="log"></div>
+  </div>
+  <div id="right">
+    <div class="box"><div id="who"></div><div id="where" class="small"></div></div>
+    <div class="box" id="stats"></div>
+    <div class="box"><h4>Worn &amp; held</h4><div id="worn"></div></div>
+    <div class="box grow"><h4>Scrip</h4><div id="inv"></div></div>
+    <div class="box" id="cmds">
+      <button data-k="l" title="Look (right-click also looks)">L<span>ook</span></button>
+      <button data-k="t" title="Talk">T<span>alk</span></button>
+      <button data-k="g" title="Get">G<span>et</span></button>
+      <button data-k="r" title="Read">R<span>ead</span></button>
+      <button data-k="u" title="Use">U<span>se</span></button>
+      <button data-k="w" title="Wear or hold">W<span>ear</span></button>
+      <button data-k="i" title="Invoke a ruler: incense, its day or hour; it delegates a spirit (§23)">I<span>nvoke</span></button>
+      <button data-k="c" title="Conjure violently: needs characters; unwilling spirits">C<span>onjure</span></button>
+      <button data-k="m" title="Make an image: matter + characters + stylus">M<span>ake</span></button>
+      <button data-k="v" title="Vivify: harmonious matter, an obedient spirit, helping symmetry (§37)">V<span>ivify</span></button>
+      <button data-k="x" title="Exorcise">X<span>orcise</span></button>
+      <button data-k="e" title="Enter / ascend">E<span>nter</span></button>
+      <button data-k="p" title="Pray">P<span>ray</span></button>
+      <button data-k="f" title="Fast for an hour">F<span>ast</span></button>
+      <button data-k="h" title="Rest, or wait for a planetary hour">H<span>old</span></button>
+      <button data-k="s" title="Search">S<span>earch</span></button>
+      <button data-k="j" title="Codex of the twelve orders">J<span>ournal</span></button>
+      <button data-k="z" title="State of the soul">Z<span>tats</span></button>
+      <button data-k="b" title="Close / open the book (monk ⇄ hermit)">B<span>ook</span></button>
+      <button data-k="q" title="Save">Q<span>save</span></button>
+      <button data-k="?" title="Help">?</button>
+    </div>
+  </div>
+</div>
+<div id="modal" class="modal"></div>
+<div id="tip"></div>
+<div id="title"></div>
+<script src="js/data.js?v=12"></script>
+<script src="js/maps.js?v=12"></script>
+<script src="js/npcs.js?v=12"></script>
+<script src="js/engine.js?v=12"></script>
+<script src="js/magic.js?v=12"></script>
+<script src="js/spirits.js?v=12"></script>
+<script src="js/story.js?v=12"></script>
+<script src="js/main.js?v=12"></script>
+</body>
+</html>
