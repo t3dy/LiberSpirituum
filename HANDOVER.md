@@ -2,13 +2,17 @@
 
 Read `DESIGN.md`, `DECISIONS.md` and `research/SOURCES.md` first.
 
-## State: playable end to end, local only
+## State: deployed to GitHub Pages (2026-10-03)
 
-- Run it with the launch config `liber-spirituum` (port 7566, `python -m http.server`), or open `index.html` directly (classic scripts, so `file://` works).
-- `tools/playthrough.js` is a scripted run from Dee's desk to the empty seat through the real UI. It makes 78 checks. Last run (2026-09-28): 78/78 passed, no exceptions. It clears `liber_bones` in localStorage at the start and leaves one entry behind. To run it, load a fresh page, then:
-  `fetch('tools/playthrough.js').then(r=>r.text()).then(eval)`, and read `window.__result`.
+**Live URL:** https://t3dy.github.io/LiberSpirituum/
+
+**Local dev:** Run with the launch config `liber-spirituum` (port 7566, `python -m http.server`), or open `index.html` directly (classic scripts, so `file://` works).
+
+**Automated test:** `tools/playthrough.js` is a scripted run from Dee's desk to the empty seat through the real UI. It makes 78 checks. Last run (2026-10-03): 77/78 passed, no exceptions. One minor FAIL (Reader NPC positioning logic). Clears `liber_bones` in localStorage at start and leaves one entry behind. To run it:
+  `fetch('tools/playthrough.js').then(r=>r.text()).then(eval)`, then read `window.__result`.
   It gives materials and skips walking. Every rule check (hours, delegation, §37, the peony hour, Jupiter's refusal, the wrong-hour failure, ruler questions) runs for real.
-- Bump `?v=N` on the script tags in `index.html` after editing JS. The browser caches aggressively.
+
+**Caching:** Bump `?v=N` on the script tags in `index.html` after editing JS. The browser caches aggressively.
 
 ## Added 2026-09-28 (from `docs/RPG_STRUCTURES.md`, researched from `E:\pdf\game design`)
 - **Discernment of spirits:** free spirits start unknown and are identified by their behaviour. Look at one to name its order. The codex has a *discernment* tab as a field guide. Ambient spirits of every order now live in the desert.
@@ -38,7 +42,7 @@ Read `DESIGN.md`, `DECISIONS.md` and `research/SOURCES.md` first.
 
 ## Not verified / known gaps
 - Nobody has played it by hand at human pace. Pacing (how long Remembrance takes to build, flesh drain) is untuned.
-- Narrow layout: the CSS stacks below 900px. Checked at about 740px wide (2026-09-28) and it renders. Phone width has not been checked. The game is keyboard-first anyway.
+- Narrow layout: the CSS stacks below 900px. Checked at about 740px wide (2026-09-28) and it renders. Phone width (375px) tested (2026-10-03): responsive layout works, text readable. The game is keyboard-first anyway.
 - All twelve structures in `docs/RPG_STRUCTURES.md` are now built or folded in.
 - Mercury blockers step aside by ±1 row and can land on void tiles. Harmless, but untidy.
-- Not deployed. Per workspace policy it would go to GitHub Pages. It needs no base-path handling because every path is relative.
+- Reader NPC positioning: one minor logic fail in automated test. Path calculation off by a tile. No exception thrown.
